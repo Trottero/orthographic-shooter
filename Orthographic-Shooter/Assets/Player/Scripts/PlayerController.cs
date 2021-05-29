@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float Speed = 1f;
     public float DashSpeed = 10f;
     public int DashDuration = 100;
+    public float DashCooldown = 1f;
     public float Gravity = -9.81f;
     public Vector3 RespawnPosition;
     public float RespawnYThreshold = 0f;
@@ -15,6 +16,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController _controller;
     private int _dashCounter;
     private Vector3 playerVelocity;
+
+    private float _dashCooldown = 0;
 
 
     void Start()
@@ -49,20 +52,29 @@ public class PlayerController : MonoBehaviour
         direction = Quaternion.Euler(0, 45, 0) * direction;
 
         var distance = Time.deltaTime * Speed;
+        if (_dashCooldown > 0)
+        {
+            _dashCooldown = Mathf.Clamp(_dashCooldown - Time.deltaTime, 0, DashCooldown);
+        }
 
-        if (!dashing)
+        if (!dashing && _dashCooldown == 0)
         {
             if (Input.GetButtonDown("Jump"))
             {
                 _dashCounter++;
+                _dashCooldown = DashCooldown;
                 distance *= DashSpeed;
             }
         }
-        else
+        else if (dashing)
         {
             // Dashing
             _dashCounter++;
             _dashCounter %= DashDuration;
+            if (direction == Vector3.zero)
+            {
+                direction = transform.forward;
+            }
             distance *= DashSpeed;
         }
 

@@ -34,7 +34,7 @@ Material:
     m_Floats:
     - BOOLEAN_6C4164AC: 1
     - Boolean_142b19edbb1f4345be2e9df6dd9e449d: 0
-    - Vector1_BF525535: 0.5
+    - Vector1_BF525535: 0.1
     m_Colors:
-    - Color_58E0201D: {r: 0.40322313, g: 0.8679245, b: 0.08597365, a: 0.69411767}
+    - Color_58E0201D: {r: 0.3254717, g: 0.91006297, b: 1, a: 0.78039217}
   m_BuildTextureStacks: []
