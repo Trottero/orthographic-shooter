@@ -732,7 +732,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 5
   DashSpeed: 10
-  DashDuration: 100
+  DashDuration: 50
   DashCooldown: 0.5
   Gravity: -9.81
   RespawnPosition: {x: 0, y: 6, z: 0}
