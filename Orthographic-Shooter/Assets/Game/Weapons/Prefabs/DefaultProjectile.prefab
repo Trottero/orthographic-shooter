@@ -47,7 +47,7 @@ MonoBehaviour:
   SourceWeapon: {fileID: 0}
   MaxLifeTime: 5
   Speed: 10
-  HitWidth: 1
+  HitWidth: 0.1
 --- !u!1 &7740457039000669030
 GameObject:
   m_ObjectHideFlags: 0
