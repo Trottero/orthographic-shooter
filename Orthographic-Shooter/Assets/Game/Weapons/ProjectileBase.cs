@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class ProjectileBase : MonoBehaviour
 {
-    public WeaponController Owner;
+    public WeaponController SourceWeapon;
 
     public Vector3 InitialPosition { get; private set; }
     public Vector3 InitialDirection { get; private set; }
@@ -17,7 +17,7 @@ public class ProjectileBase : MonoBehaviour
     // Fires the projectile forward
     public void Shoot(WeaponController controller)
     {
-        Owner = controller;
+        SourceWeapon = controller;
         InitialPosition = transform.position;
         InitialDirection = transform.forward;
         InheritedMuzzleVelocity = controller.MuzzleWorldVelocity;

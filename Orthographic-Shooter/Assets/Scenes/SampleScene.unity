@@ -696,6 +696,8 @@ GameObject:
   - component: {fileID: 601820680}
   - component: {fileID: 601820679}
   - component: {fileID: 601820681}
+  - component: {fileID: 601820682}
+  - component: {fileID: 601820683}
   m_Layer: 0
   m_Name: PlayerControlled
   m_TagString: Untagged
@@ -768,6 +770,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerCamera: {fileID: 963194227}
+--- !u!114 &601820682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601820677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f7efa05ac2fc26488157dfd92c5368f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Weapons: []
+  StartingWeapons:
+  - {fileID: 3819202651259712732, guid: e74c3c97c938937418c6d74af8c76d12, type: 3}
+--- !u!114 &601820683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 601820677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 588a262f0d4480b4f82698ce228e0f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPointer: {fileID: 0}
 --- !u!1 &647335299
 GameObject:
   m_ObjectHideFlags: 0

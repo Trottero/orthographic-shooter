@@ -16,7 +16,7 @@ public class PlayerPointer : MonoBehaviour
         return _pointerPositionOnPlane;
     }
 
-    void Awake()
+    void Start()
     {
         _plane = new Plane(Vector3.down, new Vector3(0, 7, 0));
     }
@@ -35,7 +35,9 @@ public class PlayerPointer : MonoBehaviour
         if (_plane.Raycast(ray, out var distance))
         {
             _pointerPositionOnPlane = ray.GetPoint(distance);
-            Debug.DrawLine(transform.position, ray.GetPoint(distance), Color.magenta);
+            var v3 = transform.position;
+            v3.y = 7;
+            Debug.DrawLine(v3, ray.GetPoint(distance), Color.magenta);
         }
 
     }
