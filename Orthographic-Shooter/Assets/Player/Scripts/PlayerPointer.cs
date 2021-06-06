@@ -8,7 +8,7 @@ public class PlayerPointer : MonoBehaviour
 {
     public Camera PlayerCamera;
 
-    private Plane _plane;
+    private Plane _plane = new Plane(Vector3.down, new Vector3(0, 7, 0));
     private Vector3 _pointerPositionOnPlane = Vector3.zero;
 
     public Vector3 GetPointerPositionOnPlane()
@@ -18,7 +18,6 @@ public class PlayerPointer : MonoBehaviour
 
     void Start()
     {
-        _plane = new Plane(Vector3.down, new Vector3(0, 7, 0));
     }
 
     // Update is called once per frame
