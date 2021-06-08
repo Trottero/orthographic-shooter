@@ -28,7 +28,7 @@ public class PlayerCamera : MonoBehaviour
             Debug.DrawLine(transform.position, hitInfo.point, Color.red);
             if (isHitValid(hitInfo))
             {
-
+                hitInfo.collider.gameObject.GetComponentInParent<MakeTransparantWhenBlocking>().FadeOut(hitInfo.collider);
             }
         }
     }
@@ -37,9 +37,13 @@ public class PlayerCamera : MonoBehaviour
         transform.position = new Vector3(Player.position.x, 0, Player.position.z) + _cameraPosition;
     }
 
-    bool isHitValid(RaycastHit hit)
+    private bool isHitValid(RaycastHit hit)
     {
         if (hit.collider.gameObject.GetComponent<IgnoreCameraVisibility>() != null)
+        {
+            return false;
+        }
+        if (hit.collider.gameObject.GetComponentInParent<MakeTransparantWhenBlocking>() == null)
         {
             return false;
         }
